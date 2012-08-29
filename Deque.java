@@ -2,7 +2,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class Deque<Item> implements Iterable<Item> {
-
 	private int N; // number of elements on queue
 	private Node first; // beginning of queue
 	private Node last; // end of queue
@@ -39,9 +38,7 @@ public class Deque<Item> implements Iterable<Item> {
 		first.prev = null;
 		if (empty) {
 			last = first;
-		}
-		else 
-		{
+		} else {
 			oldFirst.prev = first;
 		}
 		++N;
@@ -122,10 +119,11 @@ public class Deque<Item> implements Iterable<Item> {
 	public static void main(String[] args) {
 		Deque<String> q = new Deque<String>();
 		for (int i = 0; i < 10; ++i) {
-			if (i % 2 == 0)
+			if (i % 2 == 0) {
 				q.addLast(String.valueOf(i));
-			else if (i % 3 == 0)
+			} else if (i % 3 == 0) {
 				q.removeLast();
+			}
 		}
 		Iterator<String> iter = q.iterator();
 		while (iter.hasNext()) {
